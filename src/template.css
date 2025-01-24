@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.projects {
+  width: 30%;
+  background-color: rgb(247, 247, 232);
+  height: 100vh;
+}
+
+.contents {
+  width: 70%;
+  height: 100vh;
+}
+
+.project_list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
