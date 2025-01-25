@@ -9,13 +9,17 @@ class ToDo {
     this.prioriity = prioriity;
   }
 }
-const projects = [new Project("default"), new Project("test")];
-const list = new List(projects);
+const projects = [new Project("default")];
+// localStorage.setItem("projects", JSON.stringify(projects));
+const list = new List(JSON.parse(localStorage.getItem("projects")));
 list.render();
 
 let addProject = document.querySelector(".add_project");
 addProject.addEventListener("click", () => {
-  let newProjectName = new Project(prompt("What's your next project?: "));
-  projects.push(newProjectName);
+  let newProject = new Project(prompt("What's your next project?: "));
+  projects.push(newProject);
+  localStorage.removeItem("projects");
+  localStorage.setItem("projects", JSON.stringify(projects));
+  list.projects = projects;
   list.render();
 });
