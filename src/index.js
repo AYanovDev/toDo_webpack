@@ -5,7 +5,6 @@ import "./template.css";
 function getProjects() {
   if (localStorage.getItem("projects")) {
     const projects = JSON.parse(localStorage.getItem("projects"));
-    console.log(projects);
     let renderableProjects = projects.map((project) => {
       return new Project(project.name);
     });

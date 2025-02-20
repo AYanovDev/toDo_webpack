@@ -20,3 +20,8 @@ body {
   width: 50%;
   gap: 5px;
 }
+
+.todo_field {
+  display: flex;
+  flex-direction: row;
+}
