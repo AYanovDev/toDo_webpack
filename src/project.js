@@ -53,6 +53,18 @@ export class Project {
     }
   }
 
+  ckeckIfSelected() {
+    if (localStorage.getItem("selected" + this.name)) {
+      let romSelected = JSON.parse(
+        localStorage.getItem("selected" + this.name)
+      );
+      romSelected.renderContent();
+    } else {
+      let romSelected = localStorage.setItem("selected" + this.name, this.name);
+      romSelected.renderContent();
+    }
+  }
+
   renderContent() {
     // add new to-do section
     let add_todo = document.createElement("button");
